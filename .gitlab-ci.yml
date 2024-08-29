@@ -1,5 +1,6 @@
 stages:
   - build
+  - test
 
 build:
   stage: build
@@ -10,3 +11,11 @@ build:
   artifacts:
     paths:
       - ./build/libs/
+
+test:
+  stage: test
+  image: openjdk:17-bullseye
+  script:
+    - java -jar ./build/libs/demo-0.0.1-SNAPSHOT.jar & 
+    - sleep 20
+    - curl http://localhost:8080/ping | grep "pong"
