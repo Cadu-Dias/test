@@ -1,0 +1,12 @@
+stages:
+  - build
+
+build:
+  stage: build
+  image: openjdk:17-bullseye
+  script:
+    - ./gradlew build
+  artifacts:
+    paths:
+      - ./build/libs/
+  
