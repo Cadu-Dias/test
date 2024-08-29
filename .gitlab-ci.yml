@@ -5,6 +5,7 @@ build:
   stage: build
   image: openjdk:17-bullseye
   script:
+    - chmod +x gradlew
     - ./gradlew build
   artifacts:
     paths:
