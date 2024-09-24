@@ -25,6 +25,7 @@ build:
     - mv ./build/libs/$APP_ORIGINAL_NAME ./build/libs/$APP_NAME
   artifacts:
     paths:
+    # Permite que tal caminho seja preservado para uso de outros jobs
       - ./build/libs/
 
 # test:
